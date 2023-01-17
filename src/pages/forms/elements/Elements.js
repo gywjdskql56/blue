@@ -194,15 +194,14 @@ class Elements extends React.Component {
 
         <Row>
           {/* Horizontal form */}
-          
           <Col lg={6} md={12}>
-            <Widget title={<h6> Inputs </h6>} settings refresh close>
+            <Widget title={<h6> 매도인 </h6>} settings refresh close>
               <FormGroup>
                 <Form>
-                  <legend><strong>Horizontal</strong> form</legend>
+                  <legend><strong>매물 </strong> 등록</legend>
                   <FormGroup row>
                     <Label for="normal-field" md={4} className="text-md-right">
-                      Normal field
+                      성함
                     </Label>
                     <Col md={7}>
                       <Input type="text" id="normal-field" placeholder="May have placeholder" />
@@ -210,25 +209,79 @@ class Elements extends React.Component {
                   </FormGroup>
                   <FormGroup row>
                     <Label for="hint-field" md={4} className="text-md-right">
-                      Label hint
-                      <span className="help-block">Some help text</span>
+                      휴대폰 번호
+                      <span className="help-block">-없이 숫자만 입력하세요</span>
                     </Label>
                     <Col md={7}>
                       <Input type="text" name="password" id="hint-field" />
                     </Col>
                   </FormGroup>
                   <FormGroup row>
-                    <Label md={4} for="tooltip-enabled" className="text-md-right">Tooltip
-                      enabled</Label>
+                    <Label md={4} for="search-input1">
+                      아파트명
+                    </Label>
+                    <Col md={7}>
+                    <InputGroup>
+                      <Input type="text" id="search-input1" />
+                      <Button color="default">검색</Button>
+                    </InputGroup>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label md={4} for="tooltip-enabled" className="text-md-right">동호수</Label>
                     <Col md={7}>
                       <Input
                         className="input-transparent"
                         type="text" id="tooltip-enabled"
-                        placeholder="Hover over me.."
+                        placeholder="상세 주소를 입력해주세요."
                       />
                       <UncontrolledTooltip placement="top" target="tooltip-enabled">
                         Some explanation text here
                       </UncontrolledTooltip>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row className="display-inline-block checkbox-ios">
+                    <Label md={16} for="tooltip-enabled" className="text-md-right">세입자 유무</Label>
+                      <Label md={16} for="checkbox-ios1" className="switch">
+                        <Col>
+                        <Input
+                          type="checkbox" className="ios" defaultChecked
+                          id="checkbox-ios1"
+                        /><i />
+                        </Col>
+                      </Label>
+                  </FormGroup>
+
+                  <FormGroup row>
+                  <Col md={8}>
+                    <FormGroup className="radio abc-radio">
+                      <Input
+                        type="radio" name="radio1" id="radio1" value="option1"
+                        defaultChecked
+                      />
+                      <Label for="radio1">매매&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Label>
+{/*                 </FormGroup>
+                    <FormGroup className="radio abc-radio">*/}
+                      <Input type="radio" id="radio2" name="radio1" value="option2" />
+                      <Label for="radio2">전세</Label>
+                    </FormGroup>
+                  </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label md={4} className="text-md-right" for="appended-input">
+                      가격
+                    </Label>
+                    <Col md={7}>
+                      <InputGroup>
+                        <Input className="input-transparent" id="appended-input" bsSize="16" type="text" />
+                        <InputGroupText>만원</InputGroupText>
+                      </InputGroup>
+                      <FormGroup className="checkbox abc-checkbox abc-checkbox-danger" check>
+                        <Input id="checkbox6" type="checkbox" defaultChecked />{' '}
+                        <Label for="checkbox6" check>
+                          협의 가능
+                        </Label>
+                      </FormGroup>
                     </Col>
                   </FormGroup>
                   <FormGroup row>

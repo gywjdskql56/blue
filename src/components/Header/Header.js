@@ -29,8 +29,6 @@ import MessageIcon from "../Icons/HeaderIcons/MessageIcon";
 import BurgerIcon from "../Icons/HeaderIcons/BurgerIcon";
 import SearchIcon from "../Icons/HeaderIcons/SearchIcon";
 import ArrowIcon from "../Icons/HeaderIcons/ArrowIcon";
-
-
 import { logoutUser } from '../../actions/auth';
 import { openSidebar, closeSidebar, changeSidebarPosition, changeSidebarVisibility } from '../../actions/navigation';
 
