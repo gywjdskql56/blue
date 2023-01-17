@@ -285,6 +285,34 @@ class Elements extends React.Component {
                     </Col>
                   </FormGroup>
                   <FormGroup row>
+                  <Label md="4" className="text-md-right">
+                    매물 사진
+                  </Label>
+                  <Col md="8">
+                    <input
+                      accept="image/*" onChange={this.onChangeInputImage}
+                      id="fileupload2"
+                      type="file" name="file" className="display-none"
+                    />
+                    <div className="fileinput fileinput-new fileinput-fix">
+                      <div className="fileinput-new thumbnail">
+                        {this.state.imageFiles.length > 0 ? <div>
+                          {this.state.imageFiles.map((file, idx) => (
+                            <img alt="..." src={file.preview} key={`img-id-${idx.toString()}`} />))}
+                        </div> : <img
+                          alt="..."
+                          src={imageUpload}
+                   //       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTEiIGhlaWdodD0iMTQxIj48cmVjdCB3aWR0aD0iMTkxIiBoZWlnaHQ9IjE0MSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk1LjUiIHk9IjcwLjUiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xOTF4MTQxPC90ZXh0Pjwvc3ZnPg=="
+                        />}
+                      </div>
+                    </div>
+                    <div>
+                      <Button type="button" color="default"><Label for="fileupload2">사진 업로드</Label></Button>
+                    </div>
+                    <span className="help-block">맨 처음 등록한 사진이 가장 첫화면에 보입니다. </span>
+                  </Col>
+                </FormGroup>
+                  <FormGroup row>
                     <Label md={4} className="text-md-right" for="disabled-input">Disabled
                       input</Label>
                     <Col md={7}>
@@ -518,9 +546,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
         </Row>
-
         <Row>
-
           <Col lg={8} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
