@@ -241,14 +241,12 @@ class Elements extends React.Component {
                     </Col>
                   </FormGroup>
                   <FormGroup row className="display-inline-block checkbox-ios">
-                    <Label md={16} for="tooltip-enabled" className="text-md-right">세입자 유무</Label>
-                      <Label md={16} for="checkbox-ios1" className="switch">
-                        <Col>
+                    <Label md={10} for="tooltip-enabled" className="text-md-right">세입자 유무</Label>
+                      <Label for="checkbox-ios1" className="switch">
                         <Input
                           type="checkbox" className="ios" defaultChecked
                           id="checkbox-ios1"
                         /><i />
-                        </Col>
                       </Label>
                   </FormGroup>
 
@@ -404,7 +402,7 @@ class Elements extends React.Component {
                   <FormGroup row className="form-action bg-transparent ps-0">
                     <Label md={4} />
                     <Col md={7}>
-                      <Button color="primary" type="submit" className="me-4">Save Changes</Button>
+                      <Button color="primary" type="submit" className="me-4">저장하기</Button>
                       <Button color="default">Cancel</Button>
                     </Col>
                   </FormGroup>

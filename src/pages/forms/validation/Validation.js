@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import {
   Row,
   Col,
@@ -11,6 +11,7 @@ import Formsy from 'formsy-react';
 import InputValidation from '../../../components/InputValidation';
 import Widget from '../../../components/Widget';
 import Formik from './Formik';
+import MapTest from './KakaoMap2';
 
 class Validation extends React.Component {
 
@@ -178,6 +179,16 @@ class Validation extends React.Component {
             <Widget title={<h5> Dead simple formik</h5>} close collapse>
               <Formik />
             </Widget>
+            <Widget
+              title={<h5> Dead simple validation
+              <small> No JS needed to tune-up</small>
+              </h5>} close collapse
+            >
+              <MapTest/>
+            </Widget>
+            <div>
+              <MapTest/>
+            </div>
           </Col>
         </Row>
       </div>
