@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import am4geodata_lang_ES from "@amcharts/amcharts4-geodata/lang/KO";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
-import cities from './mock';
+//import cities from './mock';
 import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/southKoreaHigh";
 
 import AnimateNumber from 'react-animated-number';
@@ -16,9 +16,93 @@ import s from './am4chartMap.module.scss';
     map.geodataNames = am4geodata_lang_ES;
     map.percentHeight = 90;
     map.dy = 10;
-    map.projection = new am4maps.projections.Projection ();
+    map.projection = new am4maps.projections.Projection();
     let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
     polygonSeries.useGeodata = true;
+    polygonSeries.data = [{
+          "id": "KR-49",
+          "name": "제주특별자치도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-48",
+          "name": "경상남도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-47",
+          "name": "경상북도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-46",
+          "name": "전라남도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-45",
+          "name": "전라북도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          },
+          {
+          "id": "KR-44",
+          "name": "충청남도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          },
+          {
+          "id": "KR-43",
+          "name": "충청북도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-42",
+          "name": "강원도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-41",
+          "name": "경기도",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-31",
+          "name": "울산광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-30",
+          "name": "대전광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-29",
+          "name": "광주광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-28",
+          "name": "인천광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-27",
+          "name": "대구광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-26",
+          "name": "부산광역시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }, {
+          "id": "KR-11",
+          "name": "서울특별시",
+          "color": am4core.color("#474D84"),
+          "description": ""
+          }
+ ]
     map.homeZoomLevel = 1.2;
     map.zoomControl = new am4maps.ZoomControl();
     map.zoomControl.layout = 'horizontal';
@@ -50,6 +134,20 @@ import s from './am4chartMap.module.scss';
     polygonTemplate.stroke = am4core.color("#6979C9")
     let hs = polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("#354D84");
+    polygonTemplate.propertyFields.fill = "color";
+    polygonTemplate.events.on("hit", function(ev) {
+      var data = ev.target.dataItem.dataContext;
+      console.log(data);
+      var info = document.getElementById("info");
+      console.log(info);
+      info.innerHTML = "<h3>" + data.name + " (" + data.id  + ")</h3>";
+      if (data.description) {
+        info.innerHTML += data.description;
+      }
+      else {
+        info.innerHTML += "<i>No description provided.</i>"
+      }
+    });
     {/*let citySeries = map.series.push(new am4maps.MapImageSeries());
     citySeries.data = cities;
     citySeries.dataFields.value = "size";
@@ -64,7 +162,6 @@ import s from './am4chartMap.module.scss';
     circleHoverState.properties.strokeWidth = 1;
     circle.tooltipText = '{tooltip}';
     circle.propertyFields.radius = 'size';*/}
-    this.map = map;
   }
 
   componentWillUnmount() {
@@ -93,6 +190,7 @@ import s from './am4chartMap.module.scss';
         <div className={s.map} id="map">
           <span>Alternative content for the map</span>
         </div>
+        <div id="info"></div>
       </div>
     );
   }

@@ -61,7 +61,7 @@ class Product extends React.Component {
 
         return (
             <div className="product-details">
-                <h1 className="page-title">E-commerce - <span className="fw-semi-bold">Product Detail</span></h1>
+                <h1 className="page-title">매물의 <span className="fw-semi-bold">자세한 정보</span></h1>
                 {
                     product && (
                         <div>
@@ -69,7 +69,7 @@ class Product extends React.Component {
                             <Section title="Product Description" h>
                                 <Description data={product}/>
                             </Section>
-                            <Section title="You may also like">
+                            <Section title="추천 매물">
                                 <Slider slides={products}/>
                             </Section>
                         </div>

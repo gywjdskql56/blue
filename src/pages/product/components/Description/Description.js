@@ -26,19 +26,19 @@ class Description extends Component {
       <div>
         <div className={s.productDescription}>
             <div className={cx(s.productDescriptionInfo, s.productDescriptionBlock)}>
-                <h3>PRODUCT DESCRIPTION</h3>
+                <h3>매물 장점 및 설명</h3>
                 <p className="dot-before">{data.description_1}</p>
                 <p className="dot-before">{data.description_2}</p>
             </div>
             <div className={s.productDescriptionBlock}>
-                <h3>PRODUCT CODE</h3>
+                <h3>매물 번호</h3>
                 <div>{data.code}</div>
             </div>
             <div className={s.productDescriptionBlock}>
-                <h3>SHARE</h3>
+                <h3>공유하기</h3>
                 <div>
                     {/* eslint-disable */}
-                    Share photo with a tag <a href="#">#{data.hashtag}</a>
+                    매물을 공유하세요 <a href="#">#{data.hashtag}</a>
                     {/* eslint-enable */}
                     <div className={s.socialList}>
                         <div><i className="fa fa-facebook"/></div>
@@ -48,7 +48,7 @@ class Description extends Component {
                 </div>
             </div>
             <div className={s.productDescriptionBlock}>
-                <h3>TECHNOLOGY</h3>
+                <h3>1km 내의 편의시설</h3>
                 <ul>
                     {data.technology.map(t => (
                         <li key={t} className="dot-before">{t}</li>
@@ -56,10 +56,10 @@ class Description extends Component {
                 </ul>
             </div>
             <div className={s.productDescriptionBlock}>
-                <h3>RATING & REVIEWS</h3>
+                <h3>조회수</h3>
                 <div className={s.reviews}>
                     <Rating rating={data.rating}/>
-                    32 Reviews
+                    32개의 찜
                     {/* eslint-disable */}
                     <a className="text-primary" href="#">Read all</a>
                     {/* eslint-enable */}

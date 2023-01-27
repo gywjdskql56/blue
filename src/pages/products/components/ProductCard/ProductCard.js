@@ -27,7 +27,7 @@ class ProductCard extends Component {
     const { img, title, subtitle, price, discount, rating, id, createdAt, updatedAt } = this.props;
     const {favourite} = this.state;
     const newPrice = discount ? price - (price * discount / 100) : price;
-    const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
+    const label = discount ? "가격인하" : createdAt === updatedAt ? "신규등록" : null;
     return (
       <div className={[s.productCard, 'product-card'].join(' ')}>
         <div onClick={() => {this.openProduct(id)}} className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
@@ -42,11 +42,11 @@ class ProductCard extends Component {
         </div>
         <div className={s.productsCardPrice}>
           {!discount
-            ? `$${price}`
+            ? `${price}억원`
             : <div className={s.sale}>
-              <span className={s.old}>${price}</span>
+              <span className={s.old}>{price}억원</span>
               {discount}% off
-           <span className={s.new}> ${newPrice}</span>
+           <span className={s.new}> {newPrice}억원</span>
             </div>
           }
           {rating && <Rating rating={rating} size="sm" />}

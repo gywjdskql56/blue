@@ -92,24 +92,23 @@ class Sidebar extends React.Component {
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
-            header="Dashboard"
+            header="홈"
             isHeader
             iconName={<DashboardIcon className={s.menuIcon}/>}
-            link="/app/main"
+            link="/app/main/dashboard"
             index="main"
-            childrenLinks={[
-              {
-                header: 'Analytics', link: '/app/main/analytics',
-              },
-              {
-                header: 'Visits', link: '/app/main/dashboard',
-              },
-              {
-                header: 'Widgets', link: '/app/main/widgets',
-              },
-            ]}
+//            /app/main/analytics  widgets
           />
           <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="매물등록"
+            isHeader
+            iconName={<UserIcon className={s.menuIcon}/>}
+            link="/app/forms/elements"
+            index="form"
+          />
+          {/*<LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
             header="Users"
@@ -432,13 +431,11 @@ class Sidebar extends React.Component {
                 ],
               },
             ]}
-          />
+          />*/}
         </ul>
-        <h5 className={[s.navTitle, s.groupTitle].join(' ')}>
+        {/*<h5 className={[s.navTitle, s.groupTitle].join(' ')}>
           LABELS
-          {/* eslint-disable-next-line */}
         </h5>
-        {/* eslint-disable */}
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
@@ -459,7 +456,6 @@ class Sidebar extends React.Component {
             </a>
           </li>
         </ul>
-        {/* eslint-enable */}
         <h5 className={[s.navTitle, s.groupTitle].join(' ')}>
           PROJECTS
         </h5>
@@ -476,7 +472,7 @@ class Sidebar extends React.Component {
               <span className={s.alertFooter}>{alert.footer}</span>
             </Alert>,
           )}
-        </div>
+        </div>*/}
       </nav >
     );
   }

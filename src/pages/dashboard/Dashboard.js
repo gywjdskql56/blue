@@ -97,8 +97,7 @@ class Dashboard extends React.Component {
             subtitle: 'Trainers In White',
             price: 76,
             rating: 4.6,
-            description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
-            description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
+            description_1: "",
             code: 135234,
             hashtag: "whitetrainers",
             technology: [
@@ -112,9 +111,9 @@ class Dashboard extends React.Component {
     const products = this.props.products;
     return (
       <div className={s.root}>
-        <h1 className="page-title">Dashboard &nbsp;
+        <h1 className="page-title">실시간 현황 &nbsp;
           <small>
-            <small>The Lucky One</small>
+            <small>한눈에 보기</small>
           </small>
         </h1>
 
@@ -178,7 +177,7 @@ class Dashboard extends React.Component {
               <p>
                 <span className="circle bg-default text-white"><i className="fa fa-cog" /></span>
                 &nbsp; 391 elements installed, 84 sets
-              </p>*/}
+              </p>
               <div className="input-group mt">
                 <input type="text" className="form-control bg-custom-dark border-0" placeholder="Search Map" />
                 <span className="input-group-btn">
@@ -186,16 +185,16 @@ class Dashboard extends React.Component {
                     <i className="fa fa-search text-light" />
                   </button>
                 </span>
-              </div>
+              </div>*/}
 
             </Widget>
           </Col>
 
         </Row>
-        <Section title="You may also like">
+        <Section title="지역별 인기매물">
           <Slider slides={products}/>
         </Section>
-        <Row>
+        {/*<Row>
           <Col lg={6} xl={4} xs={12}>
             <Widget
               title={<h6> USERBASE GROWTH </h6>}
@@ -430,7 +429,7 @@ class Dashboard extends React.Component {
               </div>
             </Widget>
           </Col>
-        </Row>
+        </Row>*/}
       </div>
     );
   }

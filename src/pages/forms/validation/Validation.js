@@ -20,7 +20,6 @@ class Validation extends React.Component {
       <div>
         <h1 className="page-title">Form - <span className="fw-semi-bold">Validation</span>
         </h1>
-
         <Row>
           <Col lg={{size: 6, offset: 0}} xs={{size: 12, offset: 0}}>
             <Widget

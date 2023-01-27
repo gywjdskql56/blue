@@ -189,12 +189,12 @@ class Elements extends React.Component {
 
     return (
       <div className={s.root}>
-        <h1 className="page-title">Form - <span className="fw-semi-bold">Inputs & Controls</span>
+        <h1 className="page-title">매도인 - <span className="fw-semi-bold">매물 등록</span>
         </h1>
 
         <Row>
           {/* Horizontal form */}
-          <Col lg={6} md={12}>
+          <Col lg={12} md={12}>
             <Widget title={<h6> 매도인 </h6>} settings refresh close>
               <FormGroup>
                 <Form>
@@ -413,7 +413,7 @@ class Elements extends React.Component {
 
           {/* Default form */}
           
-          <Col lg={6} md={12}>
+          {/*<Col lg={6} md={12}>
             <Widget title={<h6> Prepended and appended inputs </h6>} settings refresh close>
               <FormGroup>
                 <Form>
@@ -618,10 +618,10 @@ class Elements extends React.Component {
                 </FormGroup>
               </Form>
             </Widget>
-          </Col>
+          </Col>*/}
         </Row>
 
-        <Row>
+        {/*<Row>
 
           <Col lg="6" md={12}>
             <Widget title={<h6><i className="fa fa-font" />Textareas</h6>} settings refresh close>
@@ -1414,7 +1414,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
 
-        </Row>
+        </Row>*/}
       </div> 
     );
   }

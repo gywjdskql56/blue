@@ -16,7 +16,7 @@ const Banner = ({ data }) => (
     <div className={s.productPhoto} style={{ backgroundImage: `url(${data.img})` }} />
     <div className={s.productInfo}>
       <General {...data} />
-      <button className={`btn-link ${s.productGuide}`}>Size Guide</button>
+      {/*<button className={`btn-link ${s.productGuide}`}>Size Guide</button>
       <Selects sizes={[1, 2, 3, 4, 5]} quantity={[1, 2, 3, 4, 5, 6, 7]} />
       <Bag />
       <div className={s.payments}>
@@ -24,7 +24,7 @@ const Banner = ({ data }) => (
         <div style={{ backgroundImage: `url(${mastercard})` }} />
         <div style={{ backgroundImage: `url(${paypal})` }} />
       </div>
-      <span className={s.delivery}>FREE Delivery & Returns</span>
+      <span className={s.delivery}>FREE Delivery & Returns</span>*/}
     </div>
   </div >
 );

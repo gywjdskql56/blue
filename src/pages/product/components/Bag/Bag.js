@@ -21,8 +21,10 @@ class Bag extends Component {
     return (
       <div className={s.bag} >
         <button className={cx('btn', s.add)}>
-          add to bag
-      <img src={bag} alt="bag" />
+          매도인과 연락하기
+        </button>
+        <button className={cx('btn', s.add)}>
+          가격 인하시 알림받기
         </button>
         <button className={cx('btn', s.star)} onClick={() => this.changeFavourite()}>
           <img src={favourite ? starFilled : star} alt="star" />
